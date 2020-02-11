@@ -5,22 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
+    <script defer src="./src/script.js"></script>
 </head>
 <body>
     <div id="app">
-        <h1>{{ title }}</h1>
+        <input v-model = "newDog" v-on:keyup.enter="addDoggo">
+        <button v-on:click = "addDoggo">
+            ADD
+        </button>
+        <ul>
+            <li v-for = "dog in dogs ">{{ dog.name}}</li>
+        </ul>
     </div>
-
-
-    <script>
-        new Vue({
-            el: '#app',
-            data:{
-                title: 'Hello World!'
-            }
-        });
-    </script>
     
 </body>
 </html>
